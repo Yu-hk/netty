@@ -5,7 +5,6 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class WebSocketFrameHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
@@ -18,19 +17,19 @@ public class WebSocketFrameHandler extends SimpleChannelInboundHandler<TextWebSo
     }
 
     @Override
-    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+    public void handlerAdded(ChannelHandlerContext ctx) {
         System.out.println("handlerAdded 被调用"+ctx.channel().id().asLongText());
         System.out.println("handlerAdded 被调用"+ctx.channel().id().asShortText());
     }
 
     @Override
-    public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
+    public void handlerRemoved(ChannelHandlerContext ctx) {
         System.out.println("handlerRemoved 被调用"+ctx.channel().id().asLongText());
         System.out.println("handlerRemoved 被调用"+ctx.channel().id().asShortText());
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         System.out.println("服务器发生异常-----");
     }
 }
