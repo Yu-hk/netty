@@ -46,7 +46,7 @@ public class NettyClient {
                             pipeline.addLast(client);
                         }
                     });
-            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 4000).sync();
+            bootstrap.connect("127.0.0.1", 4000).sync();
             System.out.println("客户端开始提供服务");
         } catch (Exception e){
             e.printStackTrace();
